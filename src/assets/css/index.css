@@ -29,6 +29,9 @@ ul {
   gap: 8px;
 }
 li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 18px;
   color: whitesmoke;
 }

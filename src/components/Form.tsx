@@ -14,7 +14,7 @@ const Form = ({ setTodos }: Props) => {
     const todoObj: Todo = {
       id: Date.now(),
       title: formData,
-      status: true,
+      status: false,
     };
 
     setTodos((prevTodos) => [...prevTodos, todoObj]);

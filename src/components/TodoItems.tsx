@@ -1,9 +1,17 @@
+import type { Todo } from "../types/Todo";
+
 type Props = {
-  title: string;
+  todo: Todo;
 };
 
-const TodoItems = ({ title }: Props) => {
-  return <li>{title}</li>;
+const TodoItems = ({ todo }: Props) => {
+  console.log(todo);
+  return (
+    <li>
+      <span>{todo.title}</span>
+      <input type="checkbox" />
+    </li>
+  );
 };
 
 export default TodoItems;
