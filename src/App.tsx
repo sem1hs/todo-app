@@ -1,37 +1,12 @@
-import { decrement, increment } from "./redux/appSlice";
-import { useAppDispatch, useAppSelector } from "./redux/hooks";
+import AddTask from "./components/AddTask";
+import TaskList from "./components/TaskList";
 
 function App() {
-  const { num } = useAppSelector((state) => state.app);
-  const dispatch = useAppDispatch();
-
-  function handleDec(e: React.MouseEvent<HTMLButtonElement>) {
-    e.preventDefault();
-
-    dispatch(decrement(1));
-  }
-
-  function handleInc(e: React.MouseEvent<HTMLButtonElement>) {
-    e.preventDefault();
-
-    dispatch(increment(1));
-  }
-
   return (
-    <div className="w-max mx-auto mt-36 flex gap-10 text-white text-3xl items-center">
-      <button
-        onClick={handleDec}
-        className="cursor-pointer px-10 py-3 bg-[#333] block rounded-2xl"
-      >
-        Azalt
-      </button>
-      <h1>{num}</h1>
-      <button
-        onClick={handleInc}
-        className="cursor-pointer px-10 py-3 bg-[#333] block rounded-2xl"
-      >
-        Arttır
-      </button>
+    <div className="w-max flex flex-col gap-5 mx-auto mt-[10%] bg-[#111] rounded-2xl py-8 px-6 h-[500px] max-h-[500px]">
+      <h1 className="font-bold text-3xl text-white">To-Do List 📋</h1>
+      <AddTask />
+      <TaskList />
     </div>
   );
 }
